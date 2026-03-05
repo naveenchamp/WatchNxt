@@ -1,12 +1,14 @@
 import styled from 'styled-components'
 
 export const DivContainer = styled.div`
-  width: 25%;
+  width: 260px;
   min-height: 90vh;
   background-color: ${props => (props.isDark ? '#231f20' : '#ffffff')};
+  border-right: 1px solid ${props => (props.isDark ? '#313131' : '#e2e8f0')};
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  flex-shrink: 0;
 
   @media (max-width: 767px) {
     width: 100%;
@@ -22,7 +24,7 @@ export const ListContainer = styled.ul`
 export const ListItems = styled.li`
   display: flex;
   align-items: center;
-  padding: 12px 25px;
+  padding: 13px 25px;
   cursor: pointer;
 
   color: ${props => {
@@ -47,13 +49,13 @@ export const ListItems = styled.li`
 export const SpanEl = styled.span`
   padding-left: 10px;
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
 `
 
 /* CONTACT SECTION */
 
 export const BottomDetails = styled.div`
-  padding: 20px 25px;
+  padding: 22px 25px;
 `
 
 export const Heading = styled.p`
@@ -77,5 +79,6 @@ export const ImageLogo = styled.img`
 export const Para = styled.p`
   font-size: 14px;
   line-height: 1.4;
+  margin: 0;
   color: ${props => (props.isDark ? '#d7dfe9' : '#475569')};
 `

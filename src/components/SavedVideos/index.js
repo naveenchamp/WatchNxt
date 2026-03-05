@@ -21,16 +21,14 @@ class Savedvideos extends Component {
     <VideosContainer>
       {savedVideos.map(video => (
         <Link key={video.id} to={`/videos/${video.id}`}>
-          <VideoCard>
+          <VideoCard isDark={isDark}>
             <Thumbnail src={video.thumbnailUrl} alt="video thumbnail" />
-
-            <Title isDark={isDark}>{video.title}</Title>
-
-            <ChannelName>{video.channel.name}</ChannelName>
-
-            <Views>
-              {video.viewCount} views • {video.publishedAt}
-            </Views>
+            <div>
+              <Title isDark={isDark}>{video.title}</Title>
+              <ChannelName>{video.channel.name}</ChannelName>
+              <Views>{video.viewCount}</Views>
+              <Views>{video.publishedAt}</Views>
+            </div>
           </VideoCard>
         </Link>
       ))}
@@ -62,15 +60,18 @@ class Savedvideos extends Component {
             <>
               <Header />
 
-              <Viewcontent isDark={isDark}>
+              <Viewcontent data-testid="savedVideos" isDark={isDark}>
                 <Navbar />
 
                 <Content>
-                  <h1>Saved Videos</h1>
-
-                  {isEmpty
-                    ? this.renderEmptyView()
-                    : this.renderVideos(savedVideosList, isDark)}
+                  {isEmpty ? (
+                    this.renderEmptyView()
+                  ) : (
+                    <>
+                      <h1>Saved Videos</h1>
+                      {this.renderVideos(savedVideosList, isDark)}
+                    </>
+                  )}
                 </Content>
               </Viewcontent>
             </>

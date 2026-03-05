@@ -8,16 +8,21 @@ export const Viewcontent = styled.div`
 
 export const Content = styled.div`
   flex: 1;
-  padding: 24px;
+  padding: 24px 28px;
+  overflow-y: auto;
 `
 
 export const VideoPlayerContainer = styled.div`
   width: 100%;
-  max-width: 900px;
+  max-width: 980px;
+  background-color: ${props => (props.isDark ? '#181818' : '#ffffff')};
+  border-radius: 12px;
+  border: 1px solid ${props => (props.isDark ? '#303030' : '#e2e8f0')};
+  padding: 16px;
 `
 
 export const Title = styled.p`
-  font-size: 18px;
+  font-size: 20px;
   margin-top: 15px;
   color: ${props => (props.isDark ? '#f9f9f9' : '#1e293b')};
 `
@@ -27,6 +32,12 @@ export const VideoMetaContainer = styled.div`
   justify-content: space-between;
   align-items: center;
   margin-top: 10px;
+
+  @media (max-width: 767px) {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 12px;
+  }
 `
 
 export const ViewsAndDate = styled.p`
@@ -37,21 +48,24 @@ export const ViewsAndDate = styled.p`
 export const ButtonsContainer = styled.div`
   display: flex;
   gap: 15px;
+  flex-wrap: wrap;
 `
 
 export const ActionButton = styled.button`
   background: transparent;
   border: none;
   cursor: pointer;
-  font-size: 14px;
+  font-size: 15px;
+  font-weight: 600;
   display: flex;
   align-items: center;
   gap: 5px;
+  padding: 0;
   color: ${props => (props.active ? '#2563eb' : '#64748b')};
 `
 
 export const Separator = styled.hr`
-  border: 1px solid #64748b;
+  border: 1px solid #e2e8f0;
   margin: 20px 0;
 `
 
@@ -87,5 +101,6 @@ export const Subscribers = styled.p`
 export const Description = styled.p`
   font-size: 14px;
   margin-top: 10px;
+  line-height: 1.6;
   color: ${props => (props.isDark ? '#d7dfe9' : '#475569')};
 `

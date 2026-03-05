@@ -90,7 +90,7 @@ class Navbar extends Component {
               <BottomDetails>
                 <Heading isDark={isDark}>CONTACT US</Heading>
                 <Logos>
-                  <imgeLogo
+                  <ImageLogo
                     src="https://assets.ccbp.in/frontend/react-js/nxt-watch-facebook-logo-img.png"
                     alt="facebook logo"
                   />
@@ -100,7 +100,7 @@ class Navbar extends Component {
                   />
                   <ImageLogo
                     src="https://assets.ccbp.in/frontend/react-js/nxt-watch-linked-in-logo-img.png"
-                    alt="linked in logo"
+                    alt="linkedin logo"
                   />
                 </Logos>
                 <Para isDark={isDark}>

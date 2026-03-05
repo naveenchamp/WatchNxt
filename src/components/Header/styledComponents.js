@@ -4,13 +4,17 @@ export const NavBar = styled.nav`
   height: 64px;
   padding: 0 24px;
   background-color: ${({isDark}) => (isDark ? '#181818' : '#ffffff')};
+  border-bottom: 1px solid ${({isDark}) => (isDark ? '#313131' : '#e2e8f0')};
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: sticky;
+  top: 0;
+  z-index: 100;
 `
 
 export const Logo = styled.img`
-  width: 120px;
+  width: 130px;
   cursor: pointer;
 `
 
@@ -21,11 +25,22 @@ export const RightSection = styled.div`
 `
 
 export const ThemeButton = styled.button`
-  background: none;
+  background: ${({isDark}) => (isDark ? '#272727' : '#f1f5f9')};
   border: none;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
   font-size: 22px;
   cursor: pointer;
   color: ${({isDark}) => (isDark ? '#ffffff' : '#000000')};
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.2s ease;
+
+  &:hover {
+    transform: scale(1.06);
+  }
 `
 
 export const DesktopOnly = styled.div`
@@ -47,22 +62,28 @@ export const MobileOnly = styled.div`
 `
 
 export const ProfileImage = styled.img`
-  width: 32px;
+  width: 34px;
   border-radius: 50%;
 `
 
 export const LogoutButton = styled.button`
-  padding: 6px 14px;
+  padding: 7px 16px;
   border-radius: 6px;
   background: transparent;
   border: 1px solid ${({isDark}) => (isDark ? '#ffffff' : '#3b82f6')};
   color: ${({isDark}) => (isDark ? '#ffffff' : '#3b82f6')};
   font-weight: 600;
   cursor: pointer;
+  transition: background-color 0.2s ease;
+
+  &:hover {
+    background-color: ${({isDark}) =>
+      isDark ? 'rgba(255,255,255,0.1)' : '#eff6ff'};
+  }
 `
 
 export const IconButton = styled.button`
-  background: none;
+  background: transparent;
   border: none;
   font-size: 22px;
   cursor: pointer;
@@ -72,9 +93,10 @@ export const IconButton = styled.button`
 export const ModalContainer = styled.div`
   background: #ffffff;
   padding: 24px;
-  border-radius: 8px;
-  width: 300px;
+  border-radius: 10px;
+  width: 320px;
   text-align: center;
+  box-shadow: 0 16px 40px rgba(15, 23, 42, 0.24);
 `
 
 export const ModalDesc = styled.p`
@@ -85,11 +107,13 @@ export const ModalDesc = styled.p`
 
 export const ButtonsContainer = styled.div`
   display: flex;
-  justify-content: space-between;
+  justify-content: center;
+  gap: 12px;
 `
 
 export const CloseButton = styled.button`
-  padding: 6px 14px;
+  min-width: 88px;
+  padding: 8px 14px;
   border-radius: 6px;
   background: transparent;
   border: 1px solid #64748b;
@@ -97,7 +121,8 @@ export const CloseButton = styled.button`
 `
 
 export const ConfirmButton = styled.button`
-  padding: 6px 14px;
+  min-width: 88px;
+  padding: 8px 14px;
   border-radius: 6px;
   background: #3b82f6;
   color: #ffffff;

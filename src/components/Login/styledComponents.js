@@ -6,16 +6,18 @@ export const LoginContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  background: #f9fafb;
+  background: linear-gradient(145deg, #f8fafc 0%, #e2e8f0 100%);
+  padding: 20px;
 `
 
 export const LoginFormContainer = styled.form`
   width: 100%;
-  max-width: 380px;
+  max-width: 400px;
   background: #ffffff;
   padding: 32px;
-  border-radius: 12px;
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  border-radius: 14px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 20px 45px rgba(15, 23, 42, 0.1);
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -35,7 +37,7 @@ export const Label = styled.label`
 
 export const Input = styled.input`
   height: 42px;
-  padding: 0 12px;
+  padding: 0 13px;
   border-radius: 8px;
   border: 1px solid #cbd5e1;
   font-size: 14px;
@@ -55,7 +57,7 @@ export const CheckboxContainer = styled.div`
 `
 
 export const Button = styled.button`
-  height: 42px;
+  height: 44px;
   background: #2563eb;
   color: #ffffff;
   border: none;

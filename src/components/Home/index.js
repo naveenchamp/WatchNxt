@@ -103,7 +103,7 @@ class Home extends Component {
     const {videosList} = this.state
     if (videosList.length === 0) {
       return (
-        <NoVideosContainer>
+        <NoVideosContainer isDark={isDark}>
           <img
             src="https://assets.ccbp.in/frontend/react-js/nxt-watch-no-search-results-img.png"
             alt="no videos"
@@ -120,8 +120,8 @@ class Home extends Component {
     return (
       <VideosContainer>
         {videosList.map(video => (
-          <Link to={`/videos/${video.id}`}>
-            <VideoCard key={video.id}>
+          <Link key={video.id} to={`/videos/${video.id}`}>
+            <VideoCard isDark={isDark}>
               <Thumbnail src={video.thumbnailUrl} alt="video thumbnail" />
 
               <VideoDetails>
@@ -133,9 +133,9 @@ class Home extends Component {
                 <div>
                   <VideoTitle isDark={isDark}>{video.title}</VideoTitle>
 
-                  <VideoMeta>
-                    {video.channel.name} • {video.viewCount} views
-                  </VideoMeta>
+                  <VideoMeta>{video.channel.name}</VideoMeta>
+                  <VideoMeta>{video.viewCount}</VideoMeta>
+                  <VideoMeta>{video.publishedAt}</VideoMeta>
                 </div>
               </VideoDetails>
             </VideoCard>
@@ -152,7 +152,7 @@ class Home extends Component {
   )
 
   renderFailure = isDark => (
-    <FailureContainer>
+    <FailureContainer isDark={isDark}>
       <img
         src={
           isDark
@@ -199,7 +199,7 @@ class Home extends Component {
             <>
               <Header />
 
-              <Viewcontent isDark={isDark}>
+              <Viewcontent data-testid="home" isDark={isDark}>
                 <Navbar />
 
                 <Content isDark={isDark}>
