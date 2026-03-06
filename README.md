@@ -3,7 +3,8 @@ In this project, let's build **Nxt Watch** by applying the concepts we have lear
 ### Refer to the videos below:
 
 **Success View** <br/>
-
+<img width="1241" height="764" alt="Image" src="https://github.com/user-attachments/assets/c5082fc6-2664-4c6c-a140-3d228a76c984" />
+<img width="1919" height="860" alt="Image" src="https://github.com/user-attachments/assets/757ee13d-3c78-42cb-b164-bde32e8e59b2" />
 <div style="text-align: center;">
      <video style="max-width:80%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12);outline:none;" loop="true" autoplay="autoplay" controls="controls" muted>
     <source src="https://assets.ccbp.in/frontend/content/react-js/nxt-watch-output-v0.mp4" type="video/mp4">
