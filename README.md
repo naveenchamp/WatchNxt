@@ -12,7 +12,7 @@ In this project, let's build **Nxt Watch** by applying the concepts we have lear
 <br/>
 
 **Failure View** <br/>
-
+<img width="1914" height="852" alt="Image" src="https://github.com/user-attachments/assets/250fe470-0ad4-4fca-8e01-1384bf3837e5" />
 <div style="text-align: center;">
     <video style="max-width:80%;box-shadow:0 2.8px 2.2px rgba(0, 0, 0, 0.12);outline:none;" loop="true" autoplay="autoplay" controls="controls" muted>
     <source src="https://assets.ccbp.in/frontend/content/react-js/nxt-watch-failure-output-v0.mp4" type="video/mp4">
