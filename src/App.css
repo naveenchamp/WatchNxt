@@ -2,11 +2,59 @@
   box-sizing: border-box;
 }
 
+:root {
+  --c-0f0f0f: #0f0f0f;
+  --c-f9f9f9: #f9f9f9;
+  --c-f8fafc: #f8fafc;
+  --c-1e293b: #1e293b;
+  --c-f1f5f9: #f1f5f9;
+  --c-475569: #475569;
+  --c-f1f1f1: #f1f1f1;
+  --c-181818: #181818;
+  --c-e2e8f0: #e2e8f0;
+  --c-94a3b8: #94a3b8;
+  --c-4f46e5: #4f46e5;
+  --c-64748b: #64748b;
+  --c-231f20: #231f20;
+  --c-ffffff: #ffffff;
+  --c-212121: #212121;
+  --c-616e7c: #616e7c;
+  --c-3b82f6: #3b82f6;
+  --c-00306e: #00306e;
+  --c-ebebeb: #ebebeb;
+  --c-7e858e: #7e858e;
+  --c-d7dfe9: #d7dfe9;
+  --c-cbd5e1: #cbd5e1;
+  --c-000000: #000000;
+  --c-ff0b37: #ff0b37;
+  --c-ff0000: #ff0000;
+  --c-383838: #383838;
+  --c-606060: #606060;
+  --c-909090: #909090;
+  --c-cccccc: #cccccc;
+  --c-424242: #424242;
+  --c-313131: #313131;
+  --c-f4f4f4: #f4f4f4;
+  --font-primary: 'Roboto', sans-serif;
+}
+
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
+  font-family: var(--font-primary);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: var(--c-f9f9f9);
+  color: var(--c-1e293b);
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+a:visited,
+a:hover,
+a:active {
+  text-decoration: none;
+  color: inherit;
 }

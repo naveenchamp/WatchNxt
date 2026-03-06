@@ -87,8 +87,8 @@ class Trending extends Component {
     return (
       <VideosContainer>
         {trendingVideos.map(video => (
-          <Link to={`/videos/${video.id}`}>
-            <VideoCard key={video.id}>
+          <Link key={video.id} to={`/videos/${video.id}`}>
+            <VideoCard isDark={isDark}>
               <Thumbnail src={video.thumbnailUrl} alt="video thumbnail" />
 
               <VideoDetails>
@@ -99,9 +99,9 @@ class Trending extends Component {
 
                 <div>
                   <Title isDark={isDark}>{video.title}</Title>
-                  <Views>
-                    {video.channel.name} • {video.viewCount} views
-                  </Views>
+                  <Views>{video.channel.name}</Views>
+                  <Views>{video.viewCount}</Views>
+                  <Views>{video.publishedAt}</Views>
                 </div>
               </VideoDetails>
             </VideoCard>
@@ -113,7 +113,7 @@ class Trending extends Component {
 
   renderLoader = () => (
     <LoaderContainer data-testid="loader">
-      <Loader type="ThreeDots" color="#3b82f6" height="50" width="50" />
+      <Loader type="ThreeDots" color="var(--c-3b82f6)" height="50" width="50" />
     </LoaderContainer>
   )
 
@@ -145,7 +145,7 @@ class Trending extends Component {
             <>
               <Header />
 
-              <Viewcontent isDark={isDark}>
+              <Viewcontent data-testid="trending" isDark={isDark}>
                 <Navbar />
 
                 <Content isDark={isDark}>
@@ -153,7 +153,7 @@ class Trending extends Component {
                     <IconContainer>
                       <HiFire size={30} color="red" />
                     </IconContainer>
-                    <Trendsin>Trending</Trendsin>
+                    <Trendsin isDark={isDark}>Trending</Trendsin>
                   </Headroll>
 
                   {this.renderContent(isDark)}

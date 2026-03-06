@@ -76,8 +76,8 @@ class Gaming extends Component {
     return (
       <VideosContainer>
         {gamingVideos.map(video => (
-          <Link to={`/videos/${video.id}`}>
-            <VideoCard key={video.id}>
+          <Link key={video.id} to={`/videos/${video.id}`}>
+            <VideoCard isDark={isDark}>
               <Thumbnail src={video.thumbnailUrl} alt="video thumbnail" />
               <Title isDark={isDark}>{video.title}</Title>
               <Views>{video.viewCount} Watching Worldwide</Views>
@@ -90,7 +90,7 @@ class Gaming extends Component {
 
   renderLoader = () => (
     <LoaderContainer data-testid="loader">
-      <Loader type="ThreeDots" color="#3b82f6" height="50" width="50" />
+      <Loader type="ThreeDots" color="var(--c-3b82f6)" height="50" width="50" />
     </LoaderContainer>
   )
 
@@ -122,11 +122,11 @@ class Gaming extends Component {
             <>
               <Header />
 
-              <Viewcontent isDark={isDark}>
+              <Viewcontent data-testid="gaming" isDark={isDark}>
                 <Navbar />
 
                 <Content isDark={isDark}>
-                  <Headroll>
+                  <Headroll isDark={isDark}>
                     <h1>Gaming</h1>
                   </Headroll>
 

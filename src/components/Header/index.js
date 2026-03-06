@@ -63,34 +63,41 @@ class Header extends Component {
                     type="button"
                     onClick={toggleTheme}
                     isDark={isDark}
+                    data-testid="theme"
                   >
                     {isDark ? <BsBrightnessHigh /> : <BsMoon />}
                   </ThemeButton>
 
                   {/* Desktop */}
                   <DesktopOnly>
+                    <ProfileImage
+                      src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
+                      alt="profile"
+                    />
                     <Popup
                       modal
+                      className="popup-content"
                       trigger={
-                        <>
-                          <ProfileImage
-                            src="https://assets.ccbp.in/frontend/react-js/nxt-watch-profile-img.png"
-                            alt="profile"
-                          />
-                          <LogoutButton isDark={isDark}>Logout</LogoutButton>
-                        </>
+                        <LogoutButton type="button" isDark={isDark}>
+                          Logout
+                        </LogoutButton>
                       }
                     >
                       {close => (
                         <ModalContainer>
                           <ModalDesc>
-                            Are you sure you want to logout?
+                            Are you sure, you want to logout
                           </ModalDesc>
 
                           <ButtonsContainer>
-                            <CloseButton onClick={close}>Cancel</CloseButton>
+                            <CloseButton type="button" onClick={close}>
+                              Cancel
+                            </CloseButton>
 
-                            <ConfirmButton onClick={this.onConfirmLogout}>
+                            <ConfirmButton
+                              type="button"
+                              onClick={this.onConfirmLogout}
+                            >
                               Confirm
                             </ConfirmButton>
                           </ButtonsContainer>

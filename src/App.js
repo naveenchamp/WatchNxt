@@ -24,7 +24,9 @@ class App extends Component {
 
   addSavedVideo = video => {
     this.setState(prev => ({
-      savedVideosList: [...prev.savedVideosList, video],
+      savedVideosList: prev.savedVideosList.some(item => item.id === video.id)
+        ? prev.savedVideosList
+        : [...prev.savedVideosList, video],
     }))
   }
 
